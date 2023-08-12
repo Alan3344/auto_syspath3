@@ -1,2 +1,3 @@
-recursive-include auto_syspath3/*
-*.md
+# The path relative to the root directory can be omitted
+recursive-include auto_syspath3/ *
+include *.md

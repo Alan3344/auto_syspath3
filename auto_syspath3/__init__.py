@@ -53,7 +53,7 @@ class SysPath:
     root_dir = os.getcwd()
     root_name = os.path.basename(root_dir)
 
-    debug = 1
+    debug = 0
 
     # var
     exclude = ['.git', '__pycache__']
@@ -62,7 +62,9 @@ class SysPath:
 
     # No matter how many levels are specified, the end point is relative to the cwd directory
     depth_limit: bool = getenv('syspath_depth_limit', True)
-    log_level = getenv('syspath_log_level', '').upper() or 'DEBUG' if debug else 'INFO'
+    log_level = (
+        getenv('syspath_log_level', '').upper() or 'DEBUG' if debug else 'CRITICAL'
+    )
 
 
 log.basicConfig(
