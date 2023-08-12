@@ -7,6 +7,10 @@ git clone https://github.com/Alan3344/auto_syspath3.git
 cd auto_syspath3
 python setup.py install
 ```
+或者
+```bash
+pip install git+https://github.com/Alan3344/auto_syspath3.git
+```
 
 2. 使用
 
@@ -15,8 +19,8 @@ python setup.py install
 ```python
 import sys
 sys.path.extend(['./', '../'])
-import selfpkg1
-import selfpkg2
+from utils import login
+from config import env
 ```
 
 现在只需要直接在自定义包前面加上这一行就可以了,如果你不喜欢`Flake8`提示未使用,可以在后面加上 `# noqa`
@@ -26,8 +30,8 @@ import selfpkg2
 ```python
 import os
 import auto_syspath3 # noqa
-import selfpkg1
-import selfpkg2
+from utils import quit
+from config import env
 ```
 
 ### 2.拒绝`Flake8`提示检测: module level import not at top of file Flake8(E402)
