@@ -1,5 +1,15 @@
 ### 1.使用方法:
 
+1. 安装
+
+```bash
+git clone https://github.com/Alan3344/auto_syspath3.git
+cd auto_syspath3
+python setup.py install
+```
+
+2. 使用
+
 不用再在每个文档的开头加上这两行了，因为这会招来烦人的`Flake8`提示`Flake8(E402)`
 
 ```python

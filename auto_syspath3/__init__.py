@@ -32,14 +32,13 @@ def add_path(path=__file__, deep=0):
 ```
 '''
 
+import inspect
 import logging as log
 import os
-import sys
-import inspect
 import re
-from typing import TypeVar
+import sys
 from configparser import ConfigParser
-
+from typing import TypeVar
 
 PatternString = TypeVar("PatternString", str, re.Pattern)
 
