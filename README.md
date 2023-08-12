@@ -7,6 +7,10 @@ git clone https://github.com/Alan3344/auto_syspath3.git
 cd auto_syspath3
 python setup.py install
 ```
+或者
+```bash
+pip install git+https://github.com/Alan3344/auto_syspath3.git
+```
 
 2. 使用
 
