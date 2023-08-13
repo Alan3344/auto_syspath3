@@ -4,6 +4,8 @@
 
 1. 安装(语法未使用最新`Python`版本，所以应当兼容大多数以上的`Python3`版本)
 
+- 当前已发布至PyPI,直接使用`pip install auto_syspath3`安装
+
 ```bash
 git clone https://github.com/Alan3344/auto_syspath3.git
 cd auto_syspath3
