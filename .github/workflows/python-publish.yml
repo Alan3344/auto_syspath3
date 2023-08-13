@@ -47,7 +47,7 @@ jobs:
         run: chmod +x test_run.sh && ./test_run.sh
 
       - name: Publish package
-        uses: pypa/gh-action-pypi-publish@main
+        uses: pypa/gh-action-pypi-publish@release/v1.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
