@@ -4,6 +4,8 @@
 
 1. Installation (the syntax does not use the latest `Python` version, so it should be compatible with most `Python3` versions above)
 
+- Currently released to PyPI, install directly using `pip install auto_syspath3`
+
 ```bash
 git clone https://github.com/Alan3344/auto_syspath3.git
 cd auto_syspath3
