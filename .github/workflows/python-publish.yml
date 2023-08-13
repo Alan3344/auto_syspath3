@@ -38,7 +38,9 @@ jobs:
         run: python setup.py bdist_egg
 
       - name: Move package
-        run: mv build/lib/* dist/
+        run: |
+          mv build/lib/* dist/
+          ls -alh dist/
 
       - name: Install package
         run: python setup.py install
