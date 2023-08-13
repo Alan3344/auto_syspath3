@@ -14,6 +14,7 @@ setup(
     name='auto_syspath3',
     author='Alan3344',
     version='1.0',
+    long_description_content_type='text/markdown',
     long_description=open('README.md', encoding='utf-8').read(),
     packages=['auto_syspath3'],
     include_package_data=True,
