@@ -37,6 +37,9 @@ jobs:
       - name: Build package
         run: python setup.py bdist_egg
 
+      - name: Move package
+        run: mv build/lib/* dist/
+
       - name: Install package
         run: python setup.py install
 
@@ -44,8 +47,7 @@ jobs:
         run: chmod +x test_run.sh && ./test_run.sh
 
       - name: Publish package
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@release/v1.0
         with:
           user: __token__
           password: ${{ secrets.PYPI_API_TOKEN }}
-          packages-dir: ./build/lib
