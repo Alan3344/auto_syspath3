@@ -24,6 +24,7 @@ setup(
             'dist',
             '*.egg-info',
             '.eggs',
+            '.github',
             '.git',
             '.idea',
             '.vscode',
