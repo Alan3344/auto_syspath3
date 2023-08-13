@@ -40,13 +40,16 @@ jobs:
       - name: Move package
         run: |
           mv build/lib/* dist/
-          ls -alh dist/
+          tree dist/
 
       - name: Install package
         run: python setup.py install
 
-      - name: Test package
-        run: chmod +x test_run.sh && ./test_run.sh
+      - name: Assert package is installed
+        run: |
+          python tests/main.py
+          python tests/child_package/call_user.py
+          python tests/child_package/child_package/call_user.py
 
       - name: Publish package
         if: startsWith(github.ref, 'refs/tags')
