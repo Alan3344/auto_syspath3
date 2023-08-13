@@ -40,6 +40,9 @@ import sys
 from configparser import ConfigParser
 from typing import TypeVar
 
+__version__ = '1.0'
+__author__ = 'Alan3344'
+
 PatternString = TypeVar("PatternString", str, re.Pattern)
 
 

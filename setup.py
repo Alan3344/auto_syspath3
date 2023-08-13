@@ -15,7 +15,6 @@ setup(
     author='Alan3344',
     version='1.0',
     long_description=open('README.md', encoding='utf-8').read(),
-    setup_requires=['pbr'],
     packages=['auto_syspath3'],
     include_package_data=True,
     exclude_package_data={
