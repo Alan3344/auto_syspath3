@@ -1,10 +1,10 @@
-<a href=./README.md alt=./README.md>Switch to English</a>
+<a href=https://github.com/Alan3344/auto_syspath3/blob/main/README.md alt=https://github.com/Alan3344/auto_syspath3/blob/main/README.zh-CN.md>Switch to English</a>
 
 ### 1.使用方法:
 
 1. 安装(语法未使用最新`Python`版本，所以应当兼容大多数以上的`Python3`版本)
 
-- 当前已发布至PyPI,直接使用`pip install auto_syspath3`安装
+- 当前已发布至`PyPI`,直接使用`pip install auto_syspath3`安装
 
 ```bash
 git clone https://github.com/Alan3344/auto_syspath3.git

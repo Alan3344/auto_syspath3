@@ -40,7 +40,7 @@ import sys
 from configparser import ConfigParser
 from typing import TypeVar
 
-__version__ = '1.0'
+__version__ = '1.0.1'
 __author__ = 'Alan3344'
 
 PatternString = TypeVar("PatternString", str, re.Pattern)
@@ -51,6 +51,17 @@ def getenv(key: str, default: str = "") -> str:
     return os.environ.get(key, default)
 
 
+def add_env_dir_names() -> list[str]:
+    pwd = os.getcwd()
+    ret = []
+    for dir in os.listdir(pwd):
+        if os.path.isdir(dir):
+            child_dir = os.path.join(pwd, dir, 'bin')
+            if os.path.exists(child_dir) and os.path.join(child_dir, 'activate'):
+                ret.append(dir)
+    return ret
+
+
 class SysPath:
     # path
     root_dir = os.getcwd()
@@ -59,7 +70,16 @@ class SysPath:
     debug = 0
 
     # var
-    exclude = ['.git', '__pycache__']
+    exclude = [
+        '.git',
+        '__pycache__',
+        '.vscode',
+        '.idea',
+        '.mypy_cache',
+        '.pytest_cache',
+        'venv',
+        '.venv',
+    ]
     depth = getenv('syspath_depth') and int(getenv('syspath_depth')) or 0
     regex: PatternString = getenv('syspath_regex', '')
 
@@ -137,6 +157,11 @@ def __():
             depth_limit = get_config('depth_limit', 'bool', None)
             if depth_limit is not None:
                 SysPath.depth_limit = depth_limit
+
+    envdir = add_env_dir_names()
+    if envdir:
+        SysPath.exclude.extend(envdir)
+    log.debug(f"exclude: {SysPath.exclude}")
 
 
 __()
@@ -224,6 +249,9 @@ def add_to_syspath(
                     exclude_regex = re.compile(exclude_regex)
                 if exclude_regex.search(fp):
                     continue
+
+            if re.search(r'\..+$', os.path.basename(fp)):
+                continue
 
             if fp not in sys.path:
                 paths.append(fp)

@@ -1,5 +1,8 @@
+# test local install
+# python setup.py install
+
 pip install --upgrade pip
-pip install --upgrade setuptools wheel twine 
+pip install --upgrade setuptools wheel twine
 python setup.py sdist bdist_wheel
 twine check dist/*
 twine upload --repository pypi dist/* --verbose

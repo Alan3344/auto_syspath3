@@ -1,4 +1,4 @@
-<a href=./README.zh-CN.md alt=./README.zh-CN.md>切换为中文</a>
+<a href=https://github.com/Alan3344/auto_syspath3/blob/main/README.zh-CN.md alt=https://github.com/Alan3344/auto_syspath3/blob/main/README.zh-CN.md>切换为中文</a>
 
 ### 1. Instructions:
 
